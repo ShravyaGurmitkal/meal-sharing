@@ -4,7 +4,11 @@ const router = express.Router();
 const path = require("path");
 
 const mealsRouter = require("./api/meals");
+
+const reviewsRouter = require("./api/reviews")
+
 const reservationsRouter = require("./api/reservations");
+
 const buildPath = path.join(__dirname, "../../dist");
 const port = process.env.PORT || 3000;
 const cors = require("cors");
@@ -22,6 +26,9 @@ app.use(express.json());
 app.use(cors());
 
 app.use("/api/meals", mealsRouter);
+
+app.use("/api/reviews", reviewsRouter);
+
 app.use("/api/reservations", reservationsRouter);
 
 app.get("/my-route", (req, res) => { res.send("Hi friend") });
@@ -102,6 +109,7 @@ app.get("/last-meal", async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 });
+
 
 if (process.env.API_PATH) {
   app.use(process.env.API_PATH, router);
