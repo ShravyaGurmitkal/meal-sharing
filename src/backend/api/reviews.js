@@ -6,7 +6,7 @@ const knex = require("../database");
 router.get("/", async (request, response) => {
   try {
     const allReviews = await knex("review");
-    (allReviews.length !== 0) ? response.json(allReviews) : response.status(404).send(`No reviews are available`)
+    (allReviews.length !== 0) ? response.json(allReviews) : response.json({ message: "No reviews are available" })
   } catch (error) {
     console.log(error);
     response.status(500).json({ error: "Internal server error" });
@@ -57,7 +57,7 @@ router.put("/:id", async (request, response) => {
   try {
     const updateReview = request.body;
     if(Object.keys(updateReview).length === 0) {
-      response.status(400).send('Please send the fields to update')
+      response.status(400).json({ error : "Please send the fields to update" })
     } else {
       const updatedId = await knex("review").where({'id': request.params.id}).update(updateReview);
       const allReviews = await knex("review");
