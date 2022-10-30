@@ -121,6 +121,11 @@ router.get("/:meal_id/reviews", async (request, response) => {
   try {
     const mealId_reviews = await knex("review").where({'meal_id' : request.params.meal_id});
     response.json(mealId_reviews)
+  } catch (error) {
+    console.log(error);
+    response.status(500).json({ error: "Internal server error" });
+  }
+});
 
 //Returns the meal by id
 router.get("/:id", async (request, response) => {
