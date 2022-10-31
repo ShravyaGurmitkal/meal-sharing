@@ -55,9 +55,9 @@
     "install-peers": "^1.0.3",
     "nodemon": "^2.0.20",
     "sequelize-cli": "^6.4.1",
-    "webpack": "^5.70.0",
-    "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.7.4"
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
   },
   "main": "webpack.config.js",
   "repository": {
