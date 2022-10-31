@@ -104,10 +104,6 @@ router.get("/", async (request, response) => {
     } else {
       response.status(404).json({ error: 'No meals found' });
     }
-   
-
-    const allMeals = await knex("meal");
-    (allMeals.length !== 0) ? response.json(allMeals) : response.status(404).send(`No meals are available`)
 
   } catch (error) {
     console.log(error);
