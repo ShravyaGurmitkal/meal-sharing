@@ -5,11 +5,11 @@
   box-sizing: border-box;
 }
 
-#root {
+/* #root {
   padding-left: 30%;
   padding-right: 30%;
   height: 100vh;
-}
+} */
 
 body {
   margin: 0;
