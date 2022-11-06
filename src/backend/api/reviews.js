@@ -32,7 +32,7 @@ router.post("/", async (request, response) => {
     mealids = mealids.map(id => id.id);
     if(Object.keys(newReview).length === 0) {
       response.status(400).send('Please send the fields to post review')
-    } else if(mealsids.includes(newReview.meal_id)){
+    } else if(mealids.includes(newReview.meal_id)){
       const [reviewId] = await knex("review").insert({
         "title": newReview.title,
         "description": newReview.description,

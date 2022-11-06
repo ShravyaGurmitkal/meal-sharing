@@ -25,8 +25,8 @@ router.get("/", async (request, response) => {
         meals =  meals
           .select('meal.id', 'meal.title', 'max_reservations', knex.raw('(max_reservations - sum(number_of_guests)) as available_reservations'))
           .sum('number_of_guests as number_of_guests')
-          .innerJoin('reservation', 'meal.id', 'reservation.meal_id')
-          .groupBy('meal.id').having('available_reservations','>',0)
+          .leftJoin('reservation', 'meal.id', 'reservation.meal_id')
+          .groupBy('meal.id').having('available_reservations','>',0).orHavingNull('available_reservations')
       } else if(reqValue === 'false') {
         meals =  meals
         .select('meal.id', 'meal.title', 'max_reservations', knex.raw('(max_reservations - sum(number_of_guests)) as available_reservations'))
@@ -104,10 +104,6 @@ router.get("/", async (request, response) => {
     } else {
       response.status(404).json({ error: 'No meals found' });
     }
-   
-
-    const allMeals = await knex("meal");
-    (allMeals.length !== 0) ? response.json(allMeals) : response.status(404).send(`No meals are available`)
 
   } catch (error) {
     console.log(error);

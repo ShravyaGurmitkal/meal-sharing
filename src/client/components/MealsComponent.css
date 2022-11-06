@@ -1,0 +1,48 @@
+.contentDisplayDiv {
+    padding-bottom: 0.5em;
+    text-align: center;
+    padding-left: 10em;
+    width: 100%;
+    background-image: url('https://thumbs.dreamstime.com/b/indian-food-cuisine-dishes-copy-space-tikka-masala-dal-paneer-samosa-chapati-chutney-spices-gray-background-assortment-meal-145296328.jpg');
+}
+
+.contentDisplayDivUl {
+    text-align: center;
+}
+.listContent {
+    padding-bottom: 1%;
+}
+
+.error-message {
+    color: red;
+}
+
+.topButtonDiv {
+    text-align: right;
+    padding: 1em;
+}
+
+@media screen and (min-width: 564px) and (max-width: 900px) {
+    .listContent {
+        background-color: aliceblue;
+        opacity: 0.8;
+    }
+}
+
+@media screen and (max-width: 564px) {
+    
+    .contentDisplayDiv {
+        text-align: start;
+        padding-right: 6em;
+    }
+
+    .listContent {
+        background-color: aliceblue;
+        opacity: 0.8;
+    }
+
+
+    .topButtonDiv {
+        text-align: center;
+    }
+}
