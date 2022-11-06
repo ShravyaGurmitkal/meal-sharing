@@ -1,15 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu|Lora');
 @import 'theme.css';
 * {
-  font-family: 'Montserrat', sans-serif;
+  font-family: Ubuntu, sans-serif;
   box-sizing: border-box;
 }
 
-/* #root {
-  padding-left: 30%;
-  padding-right: 30%;
+#root {
+  display: flex;
+  flex-flow: row wrap;
   height: 100vh;
-} */
+  margin: 0.1em;
+}
 
 body {
   margin: 0;
@@ -28,13 +30,14 @@ a {
 }
 
 button {
-  background-color: #3e99c0;
+  background-color: olive;
   border-radius: 8px;
   border-width: 0px;
   font-weight: 295;
-  color: rgb(255, 255, 255);
+  color: black;
   padding: 5px;
   font-size: 17px;
+  border: 1px solid gray;
 }
 
 /* @media screen and (max-width: 1400px) {
