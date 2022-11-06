@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu|Lora');
+
+.header {
+    display: flex;
+    flex-flow: column wrap;
+    padding-left: 15em;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    background-image: url('https://thumbs.dreamstime.com/b/indian-food-cuisine-dishes-copy-space-tikka-masala-dal-paneer-samosa-chapati-chutney-spices-gray-background-assortment-meal-145296328.jpg');
+    font-style: italic;  
+}
+
+.titleDiv h1 {
+    font-size: 3.3em;
+    color: olive;
+}
+
+.headerNavUl {
+    display: flex;
+    flex-flow: row wrap;
+    padding-left: 5em;
+}
+
+.headerNavUl li {
+    margin: 0em 1.3em 0.5em 1.3em;
+    padding: 0.5em;
+    font-size: 1.3em;
+    border: 1px solid olive;
+    border-radius: 15px;  
+}
+
+
+@media screen and (min-width: 575px) and (max-width: 765px) {
+    .header {
+        padding-left: 5em;
+       
+    }
+
+    .headerNavUl {
+        padding-left: 2em;
+    }
+
+    .headerNavUl li {
+        font-size: 1em;
+        margin: 0em 0em 0.5em 0.8em;
+    }
+
+
+    .titleDiv h1 {
+        font-size: 2.3em;
+    }
+
+}
+
+@media screen and (max-width: 575px) {
+
+    .header {
+        text-align: center;
+        padding: 0;
+    }
+
+    .headerNavUl {
+        display: flex;
+        flex-flow: column wrap;
+        align-content: flex-end;
+        margin-right: 8em;
+    }
+
+    .headerNavUl li {
+        font-size: 1em;
+        background-color: olive;
+    }
+
+    .titleDiv h1 {
+        font-size: 1.9em;
+        color: black;
+    }
+
+}

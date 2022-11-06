@@ -11,9 +11,9 @@ function App() {
       <Route exact path="/">
         <Header></Header>
         <Allmeals></Allmeals>
-        <p>test</p>
+
       </Route>
-      <Route exact path="/lol">
+      <Route exact path="/meals/{id}">
         <Header></Header>
         <p>lol</p>
       </Route>

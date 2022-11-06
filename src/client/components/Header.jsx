@@ -1,17 +1,34 @@
 import React from "react";
 import logo from "../assets/images/meal_logo.png";
+import { Link } from "react-router-dom";
+import "./Header.css"
 
 export default function Header() {
     return (
-        <header className="header">
-            <div>
-                <img src={logo} alt="mealSharingLogo" height="5em" width="5em"/>
+        <header className="header" id="header">
+            <div className="titleDiv">
+                <h1>Meals Sharing</h1>
             </div>
-            <nav className="headerNav">
-                <p>Home</p>
-                <p>AboutUs</p>
-                <p>ContactUS</p>
-            </nav>
+
+            <nav>
+                <ul className="headerNavUl">
+                    <li>
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li>
+                        <Link to="/meals"> ReserveMeal</Link>
+                    </li>
+                    <li>
+                        <Link to="/createmeal">CreateMeal</Link>
+                    </li>
+                    <li>
+                        <Link to="/mealReviews">Reviews</Link>
+                    </li>
+                    <li>
+                        <a href="#footer">Contact</a>
+                    </li>
+                </ul>
+            </nav>              
         </header>
     )
 }

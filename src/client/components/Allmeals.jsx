@@ -16,7 +16,8 @@ export default function Allmeals() {
       }, []);
 
     return (
-        <>
+        <div className="allMealsDiv">
+            <h1>ALL MEALS</h1>
             {isLoading && <p>loading....</p>}
             {allMeals.length === 0  ? 
                     <p>No Results</p> : 
@@ -32,6 +33,6 @@ export default function Allmeals() {
                         }))}
                     </ul>
             }
-        </>
+        </div>
     )
 }
