@@ -25,8 +25,8 @@ router.get("/", async (request, response) => {
         meals =  meals
           .select('meal.id', 'meal.title', 'max_reservations', knex.raw('(max_reservations - sum(number_of_guests)) as available_reservations'))
           .sum('number_of_guests as number_of_guests')
-          .innerJoin('reservation', 'meal.id', 'reservation.meal_id')
-          .groupBy('meal.id').having('available_reservations','>',0)
+          .leftJoin('reservation', 'meal.id', 'reservation.meal_id')
+          .groupBy('meal.id').having('available_reservations','>',0).orHavingNull('available_reservations')
       } else if(reqValue === 'false') {
         meals =  meals
         .select('meal.id', 'meal.title', 'max_reservations', knex.raw('(max_reservations - sum(number_of_guests)) as available_reservations'))
