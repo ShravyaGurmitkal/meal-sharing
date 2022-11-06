@@ -1,0 +1,30 @@
+.formInputs {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+ 
+.formInputs input {
+    margin: 1% 1% 1% 1%;
+}
+
+.formSubmissonButton {
+    margin: 1em;
+}
+
+.success-message {
+    color: olive;
+}
+
+.error-message {
+    color: red;
+}
+
+@media screen and (max-width: 900px) {
+    .formsDiv {
+        background-color: aliceblue;
+        opacity: 0.8;
+    }
+}
